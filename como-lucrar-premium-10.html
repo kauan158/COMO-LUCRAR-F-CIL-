@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Como Lucrar — conteúdo e estratégias práticas para desenvolver habilidades, criar oportunidades e construir novas fontes de renda.">
+  <meta name="keywords" content="como lucrar, renda extra, empreendedorismo, negócios online, educação financeira">
+  <meta name="theme-color" content="#080a0f">
+  <title>Como Lucrar | Transforme conhecimento em oportunidades</title>
+  <style>
+    :root{
+      --bg:#07090d;--card:#0d1118;--card2:#111722;--text:#f5f7fb;--muted:#9aa5b5;
+      --accent:#b7ff4a;--accent2:#77d61d;--line:rgba(255,255,255,.09);--max:1160px;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:radial-gradient(circle at 80% 0%,rgba(183,255,74,.10),transparent 30%),var(--bg);color:var(--text);line-height:1.6}
+    a{text-decoration:none;color:inherit}
+    .container{width:min(var(--max),92%);margin:auto}
+    header{position:fixed;top:0;left:0;right:0;z-index:20;background:rgba(7,9,13,.72);backdrop-filter:blur(18px);border-bottom:1px solid transparent;transition:.3s}
+    header.scrolled{border-color:var(--line)}
+    nav{height:76px;display:flex;align-items:center;justify-content:space-between}
+    .logo{font-size:1.25rem;font-weight:900;letter-spacing:-.04em}.logo span{color:var(--accent)}
+    .links{display:flex;gap:28px;color:#c7ced9;font-size:.93rem}
+    .links a:hover{color:var(--accent)}
+    .menu{display:none;background:none;border:0;color:white;font-size:1.5rem}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 19px;border-radius:12px;border:1px solid var(--line);font-weight:800;transition:.25s;cursor:pointer}
+    .btn.primary{background:var(--accent);color:#10150b;border-color:var(--accent);box-shadow:0 10px 35px rgba(183,255,74,.16)}
+    .btn.primary:hover{transform:translateY(-2px);background:#c5ff69}
+    .btn.ghost:hover{border-color:rgba(183,255,74,.45)}
+    .hero{min-height:100vh;display:flex;align-items:center;padding:130px 0 80px;position:relative;overflow:hidden}
+    .hero:before{content:"";position:absolute;width:420px;height:420px;border-radius:50%;background:rgba(183,255,74,.10);filter:blur(100px);right:-100px;top:100px}
+    .grid{display:grid;grid-template-columns:1.1fr .9fr;gap:70px;align-items:center}
+    .badge{display:inline-flex;padding:7px 11px;border:1px solid rgba(183,255,74,.22);background:rgba(183,255,74,.06);color:var(--accent);border-radius:999px;font-size:.78rem;font-weight:800;margin-bottom:20px}
+    h1{font-size:clamp(3rem,7vw,6.4rem);line-height:.94;letter-spacing:-.065em;max-width:850px}
+    h1 span{color:var(--accent)}
+    .hero p{font-size:1.1rem;color:var(--muted);max-width:650px;margin:25px 0 30px}
+    .actions{display:flex;gap:12px;flex-wrap:wrap}
+    .stats{display:flex;gap:30px;margin-top:35px;color:var(--muted);font-size:.85rem}
+    .stats strong{display:block;color:white;font-size:1.15rem}
+    .visual{background:linear-gradient(145deg,#151b25,#0b0f15);border:1px solid var(--line);border-radius:28px;padding:25px;box-shadow:0 30px 100px rgba(0,0,0,.35);transform:rotate(2deg)}
+    .dashboard{border:1px solid var(--line);border-radius:20px;background:#090c11;padding:22px}
+    .dash-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:24px}
+    .dot{width:10px;height:10px;background:var(--accent);border-radius:50%;display:inline-block;box-shadow:0 0 18px var(--accent)}
+    .chart{height:170px;display:flex;align-items:end;gap:8px;padding-top:20px}
+    .bar{flex:1;border-radius:7px 7px 2px 2px;background:linear-gradient(to top,var(--accent2),var(--accent));opacity:.8;animation:grow 1s ease both}
+    .bar:nth-child(1){height:35%}.bar:nth-child(2){height:50%}.bar:nth-child(3){height:43%}.bar:nth-child(4){height:65%}.bar:nth-child(5){height:58%}.bar:nth-child(6){height:82%}.bar:nth-child(7){height:100%}
+    @keyframes grow{from{height:0}}
+    section{padding:100px 0}
+    .section-head{max-width:700px;margin-bottom:45px}
+    .eyebrow{color:var(--accent);text-transform:uppercase;letter-spacing:.16em;font-size:.72rem;font-weight:900;margin-bottom:10px}
+    h2{font-size:clamp(2rem,4vw,3.5rem);line-height:1.02;letter-spacing:-.045em}
+    .section-head p{color:var(--muted);margin-top:14px}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .card{background:linear-gradient(145deg,var(--card),#0a0e14);border:1px solid var(--line);border-radius:20px;padding:28px;transition:.3s}
+    .card:hover{transform:translateY(-6px);border-color:rgba(183,255,74,.3)}
+    .icon{width:46px;height:46px;display:grid;place-items:center;border-radius:13px;background:rgba(183,255,74,.09);color:var(--accent);font-size:1.3rem;margin-bottom:22px}
+    .card h3{font-size:1.15rem;margin-bottom:8px}.card p{color:var(--muted);font-size:.92rem}
+    .dark-band{background:#0a0d12;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .portfolio{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .project{min-height:240px;border-radius:20px;border:1px solid var(--line);padding:25px;display:flex;flex-direction:column;justify-content:end;overflow:hidden;position:relative;background:linear-gradient(145deg,#151b25,#090c11)}
+    .project:before{content:"";position:absolute;width:180px;height:180px;background:rgba(183,255,74,.13);filter:blur(50px);top:-70px;right:-50px}
+    .project span,.project h3,.project p{position:relative}.project span{font-size:.7rem;color:var(--accent);text-transform:uppercase;font-weight:800}.project p{color:var(--muted);font-size:.85rem;margin-top:5px}
+    .quote-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.quote{padding:28px;border:1px solid var(--line);border-radius:20px;background:var(--card)}.stars{color:var(--accent);letter-spacing:3px}.quote p{margin:18px 0;color:#dce1e9}.person{color:var(--muted);font-size:.85rem}
+    .faq{max-width:850px}.faq-item{border-bottom:1px solid var(--line)}.faq-q{width:100%;padding:22px 0;background:none;border:0;color:white;text-align:left;font-size:1rem;font-weight:800;display:flex;justify-content:space-between;cursor:pointer}.faq-a{max-height:0;overflow:hidden;color:var(--muted);transition:.3s}.faq-item.open .faq-a{max-height:150px;padding:0 0 22px}.plus{color:var(--accent);font-size:1.4rem}
+    .contact{display:grid;grid-template-columns:.85fr 1.15fr;gap:35px;align-items:start}
+    .contact-box{background:linear-gradient(145deg,#121821,#090c11);border:1px solid var(--line);border-radius:24px;padding:32px}.contact-box p{color:var(--muted);margin:12px 0 25px}
+    form{display:grid;gap:13px}input,textarea{width:100%;padding:15px 16px;background:#080b10;border:1px solid var(--line);border-radius:12px;color:white;outline:none;font:inherit}input:focus,textarea:focus{border-color:rgba(183,255,74,.5)}textarea{min-height:130px;resize:vertical}
+    .map{height:300px;border-radius:20px;border:1px solid var(--line);overflow:hidden;background:#10151d;display:grid;place-items:center;text-align:center;color:var(--muted)}.map a{color:var(--accent);font-weight:800}
+    footer{padding:35px 0;border-top:1px solid var(--line);color:var(--muted);font-size:.85rem}.footer-inner{display:flex;justify-content:space-between;gap:20px}
+    .whatsapp{position:fixed;right:20px;bottom:20px;z-index:15;width:58px;height:58px;border-radius:50%;display:grid;place-items:center;background:#25d366;color:white;font-size:1.55rem;box-shadow:0 10px 35px rgba(37,211,102,.3);animation:pulse 2.2s infinite}
+    @keyframes pulse{0%,100%{box-shadow:0 10px 35px rgba(37,211,102,.3)}50%{box-shadow:0 10px 45px rgba(37,211,102,.55)}}
+    .reveal{opacity:0;transform:translateY(20px);transition:.7s}.reveal.show{opacity:1;transform:none}
+    @media(max-width:850px){.links,.nav-btn{display:none}.menu{display:block}.grid,.contact{grid-template-columns:1fr}.visual{transform:none}.cards,.portfolio,.quote-grid{grid-template-columns:1fr}.hero{padding-top:115px}.stats{gap:18px;flex-wrap:wrap}}
+    @media(max-width:500px){section{padding:75px 0}h1{font-size:3.3rem}.actions .btn{width:100%}.footer-inner{flex-direction:column}}
+  
+.pay-modal{position:fixed;inset:0;z-index:100;display:none;place-items:center;padding:20px;background:rgba(0,0,0,.8);backdrop-filter:blur(10px)}
+.pay-modal.open{display:grid}
+.pay-card{position:relative;width:min(430px,100%);padding:30px;border:1px solid var(--line);border-radius:24px;background:#0c1118;text-align:center;box-shadow:0 30px 100px rgba(0,0,0,.6)}
+.pay-card h2{font-size:2rem;margin-bottom:8px}
+.pix-qr{width:250px;height:250px;margin:20px auto;display:block;border-radius:12px;background:#fff;padding:10px}
+.pay-close{position:absolute;right:15px;top:8px;border:0;background:none;color:#fff;font-size:2rem;cursor:pointer}
+.pix-key{margin:16px 0;padding:14px;border:1px solid rgba(183,255,74,.25);background:rgba(183,255,74,.06);border-radius:12px}
+.pix-key span{display:block;color:var(--muted);font-size:.75rem;margin-bottom:4px}.pix-key strong{word-break:break-all}
+</style>
+</head>
+<body>
+<header id="header"><div class="container"><nav>
+  <a class="logo" href="#">COMO<span>LUCRAR</span></a>
+  <div class="links"><a href="#metodos">Métodos</a><a href="#estrategias">Estratégias</a><a href="#resultados">Resultados</a><a href="#oferta">Acesso</a><a href="#faq">FAQ</a></div>
+  <button class="btn primary nav-btn pay-trigger" type="button">Começar agora</button>
+  <button class="menu" aria-label="Abrir menu">☰</button>
+</nav></div></header>
+
+<main>
+<section class="hero"><div class="container grid">
+  <div class="reveal">
+    <div class="badge">CONHECIMENTO • ESTRATÉGIA • AÇÃO</div>
+    <h1>Aprenda a <span>lucrar</span> com estratégia.</h1>
+    <p>Conteúdo direto ao ponto para quem quer desenvolver habilidades, encontrar oportunidades e construir fontes de renda de forma responsável.</p>
+    <div class="actions"><button class="btn primary pay-trigger" type="button">Explorar oportunidades →</button><a class="btn ghost" href="#contato">Falar com a equipe</a></div>
+    <div class="stats"><div><strong>Conteúdo prático</strong>Sem enrolação</div><div><strong>Estratégias</strong>Aplicáveis</div><div><strong>Foco</strong>Em longo prazo</div></div>
+  </div>
+  <div class="visual reveal"><div class="dashboard">
+    <div class="dash-top"><strong>Painel de oportunidades</strong><span class="dot"></span></div>
+    <small style="color:#9aa5b5">Evolução de conhecimento</small>
+    <div class="chart"><i class="bar"></i><i class="bar"></i><i class="bar"></i><i class="bar"></i><i class="bar"></i><i class="bar"></i><i class="bar"></i></div>
+    <div style="display:flex;justify-content:space-between;color:#9aa5b5;font-size:.75rem"><span>Aprender</span><span>Aplicar</span><span>Otimizar</span></div>
+  </div></div>
+</div></section>
+
+<section id="metodos"><div class="container">
+  <div class="section-head reveal"><div class="eyebrow">Possibilidades</div><h2>Encontre caminhos que combinam com você.</h2><p>Não existe fórmula mágica. Existem habilidades, modelos de negócio e estratégias que podem ser estudados e testados.</p></div>
+  <div class="cards">
+    <article class="card reveal"><div class="icon">↗</div><h3>Serviços digitais</h3><p>Transforme habilidades como design, edição, programação ou marketing em serviços para clientes.</p></article>
+    <article class="card reveal"><div class="icon">◈</div><h3>Produtos digitais</h3><p>Aprenda a estruturar materiais educativos, templates e outros produtos baseados em conhecimento.</p></article>
+    <article class="card reveal"><div class="icon">◎</div><h3>Negócios online</h3><p>Conheça modelos de negócio, aquisição de clientes e processos para validar ideias com responsabilidade.</p></article>
+  </div>
+</div></section>
+
+<section class="dark-band" id="estrategias"><div class="container">
+  <div class="section-head reveal"><div class="eyebrow">Estratégia</div><h2>Menos promessa. Mais processo.</h2><p>Uma abordagem em três etapas para sair da ideia e chegar à execução.</p></div>
+  <div class="cards">
+    <article class="card reveal"><div class="icon">01</div><h3>Aprenda</h3><p>Escolha uma habilidade com demanda e estude os fundamentos antes de tentar monetizá-la.</p></article>
+    <article class="card reveal"><div class="icon">02</div><h3>Teste</h3><p>Crie uma oferta simples, converse com potenciais clientes e valide o problema que você resolve.</p></article>
+    <article class="card reveal"><div class="icon">03</div><h3>Otimize</h3><p>Use os resultados para melhorar sua oferta, seus processos e sua forma de divulgação.</p></article>
+  </div>
+</div></section>
+
+<section id="resultados"><div class="container">
+  <div class="section-head reveal"><div class="eyebrow">Aplicações</div><h2>Ideias para colocar o conhecimento em prática.</h2></div>
+  <div class="portfolio">
+    <article class="project reveal"><span>01 · Freelance</span><h3>Venda uma habilidade</h3><p>Organize uma oferta clara e encontre clientes em canais adequados.</p></article>
+    <article class="project reveal"><span>02 · Conteúdo</span><h3>Construa audiência</h3><p>Publique conteúdo útil e consistente para criar autoridade em um tema.</p></article>
+    <article class="project reveal"><span>03 · Produto</span><h3>Crie uma solução</h3><p>Identifique uma necessidade e transforme seu conhecimento em uma solução.</p></article>
+  </div>
+</div></section>
+
+<section class="dark-band"><div class="container">
+  <div class="section-head reveal"><div class="eyebrow">Depoimentos</div><h2>Experiências de quem decidiu começar.</h2></div>
+  <div class="quote-grid">
+    <article class="quote reveal"><div class="stars">★★★★★</div><p>“O conteúdo me ajudou a organizar minhas ideias e entender por onde começar.”</p><div class="person">Lucas M. · Freelancer</div></article>
+    <article class="quote reveal"><div class="stars">★★★★★</div><p>“Gostei da abordagem prática. Parei de procurar atalhos e comecei a testar uma habilidade.”</p><div class="person">Ana R. · Criadora</div></article>
+    <article class="quote reveal"><div class="stars">★★★★★</div><p>“As estratégias deixaram meu projeto mais organizado e fácil de explicar para clientes.”</p><div class="person">Rafael S. · Empreendedor</div></article>
+  </div>
+</div></section>
+
+<section id="faq"><div class="container"><div class="section-head reveal"><div class="eyebrow">FAQ</div><h2>Perguntas frequentes.</h2></div><div class="faq">
+  <div class="faq-item"><button class="faq-q">É possível ganhar dinheiro rapidamente? <span class="plus">+</span></button><div class="faq-a">Resultados variam conforme habilidade, mercado, esforço e contexto. Não há garantia de ganhos nem fórmula de dinheiro rápido.</div></div>
+  <div class="faq-item"><button class="faq-q">Preciso investir dinheiro para começar? <span class="plus">+</span></button><div class="faq-a">Nem sempre. Algumas atividades podem começar com ferramentas gratuitas; outras exigem custos. Avalie os riscos antes de investir.</div></div>
+  <div class="faq-item"><button class="faq-q">Qual método devo escolher? <span class="plus">+</span></button><div class="faq-a">Considere suas habilidades, interesses, tempo disponível, demanda do mercado e recursos. Comece pequeno e valide antes de ampliar.</div></div>
+  <div class="faq-item"><button class="faq-q">Vocês garantem resultados? <span class="plus">+</span></button><div class="faq-a">Não. O site oferece informação e estratégias educacionais. Resultados dependem da execução e de diversos fatores externos.</div></div>
+</div></div></section>
+
+
+<section id="oferta" class="dark-band"><div class="container">
+  <div class="section-head reveal">
+    <div class="eyebrow">Acesso especial</div>
+    <h2>Comece hoje por apenas <span style="color:var(--accent)">R$ 10</span>.</h2>
+    <p>Acesso ao conteúdo especial do Como Lucrar por um valor acessível. Pagamento via Pix.</p>
+  </div>
+  <div class="contact-box reveal" style="max-width:620px;margin:auto;text-align:center">
+    <div class="icon" style="margin:0 auto 20px">R$</div>
+    <h3 style="font-size:2rem">R$ 10,00</h3>
+    <p>Para pagar, envie o valor pelo Pix usando a chave abaixo:</p>
+    <div style="padding:16px;border:1px solid rgba(183,255,74,.25);background:rgba(183,255,74,.06);border-radius:12px;margin:18px 0;font-weight:900;letter-spacing:.04em;word-break:break-all">14050871963</div>
+    <button class="btn primary pay-trigger" type="button">Pagar R$ 10 via Pix</button>
+    <p id="pixStatus" style="font-size:.8rem;margin-top:12px"></p>
+  </div>
+</div></section>
+
+<section id="contato"><div class="container contact">
+  <div class="contact-box reveal"><div class="eyebrow">Vamos conversar</div><h2>Pronto para transformar uma ideia em ação?</h2><p>Envie uma mensagem e conte o que você quer construir. A equipe pode orientar os próximos passos.</p>
+    <button class="btn primary pay-trigger" type="button">Acessar por R$ 10 ↗</button>
+  </div>
+  <div class="reveal"><form id="form"><input required placeholder="Seu nome" aria-label="Seu nome"><input required type="email" placeholder="Seu e-mail" aria-label="Seu e-mail"><textarea required placeholder="Como podemos ajudar?" aria-label="Mensagem"></textarea><button class="btn primary" type="submit">Enviar mensagem →</button></form></div>
+</div></section>
+
+<section><div class="container"><div class="map reveal"><div><strong>Google Maps</strong><p>Curitiba, Paraná</p><a href="https://www.google.com/maps/search/?api=1&query=Curitiba%2C+Paran%C3%A1" target="_blank" rel="noopener">Abrir no Google Maps →</a></div></div></section>
+</main>
+
+<footer><div class="container footer-inner"><span>© 2026 Como Lucrar. Todos os direitos reservados.</span><span>Conteúdo educativo • Resultados não garantidos</span></div></footer>
+<a class="whatsapp" href="https://wa.me/5542999086180?text=Olá!%20Quero%20saber%20mais." target="_blank" rel="noopener" aria-label="WhatsApp">◔</a>
+
+<script>
+  const header=document.getElementById('header');
+  window.addEventListener('scroll',()=>header.classList.toggle('scrolled',scrollY>20));
+  const observer=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')}),{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(e=>observer.observe(e));
+  document.querySelectorAll('.faq-q').forEach(btn=>btn.addEventListener('click',()=>btn.parentElement.classList.toggle('open')));
+  document.querySelector('.menu').addEventListener('click',()=>document.querySelector('.links').classList.toggle('open'));
+  document.getElementById('form').addEventListener('submit',e=>{e.preventDefault();alert('Mensagem preparada! Conecte este formulário a um serviço de envio para receber as mensagens.');});
+
+  const copyBtn=document.getElementById('copyPix');
+  if(copyBtn){
+    copyBtn.addEventListener('click',async()=>{
+      try{
+        await navigator.clipboard.writeText('14050871963');
+        document.getElementById('pixStatus').textContent='Chave Pix copiada!';
+      }catch(e){
+        document.getElementById('pixStatus').textContent='Chave Pix: 14050871963';
+      }
+    });
+  }
+
+
+  const paymentModal=document.getElementById('paymentModal');
+  const closePayment=document.getElementById('closePayment');
+  document.querySelectorAll('.pay-trigger').forEach(btn=>btn.addEventListener('click',()=>{
+    paymentModal.classList.add('open');
+    paymentModal.setAttribute('aria-hidden','false');
+    document.body.style.overflow='hidden';
+  }));
+  function closePay(){
+    paymentModal.classList.remove('open');
+    paymentModal.setAttribute('aria-hidden','true');
+    document.body.style.overflow='';
+  }
+  closePayment.addEventListener('click',closePay);
+  paymentModal.addEventListener('click',e=>{if(e.target===paymentModal)closePay()});
+  document.getElementById('copyPaymentPix').addEventListener('click',async()=>{
+    try{
+      await navigator.clipboard.writeText('14050871963');
+      document.getElementById('paymentStatus').textContent='Chave Pix copiada!';
+    }catch(e){
+      document.getElementById('paymentStatus').textContent='Chave Pix: 14050871963';
+    }
+  });
+</script>
+
+
+<div id="paymentModal" class="pay-modal" aria-hidden="true">
+  <div class="pay-card">
+    <button class="pay-close" id="closePayment" aria-label="Fechar">×</button>
+    <div class="eyebrow">PIX • PAGAMENTO</div>
+    <h2>Pagamento de R$ 10,00</h2>
+    <p style="color:var(--muted)">Escaneie o QR Code pelo aplicativo do seu banco.</p>
+    <img class="pix-qr" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAWgAAAFoAQAAAABSnlx4AAACzElEQVR4nO2bzVJrMQyDpTt5/1fWXfgnLgwLpoHaJe1QTk+/hScER5ZdCt94/PsOfOlLv5xeAO1K5cKuBdq7/KBP3FPpBUAAQFCEKBCye8w/ghON4p5KL8AXFrbQIGxHy96Wpe8U93vQtrXlSy3Q1v0FkbwrvfalKNAyR4iWj+KlT9xT6QXUZRURqTzyCgvRJ+6pNLT38tfPQPvEPZVen5IGUSSi7fgk+sQ9lS4529WgLzAr5Uq8UdxTaUglaQgQpLgLTzeux28+eZ6GFCvtS52ZXBWQoLvez9OQJAmqOzx/7K6tvu7+PkQTBAlCu5gXQLkctFTOX4jk/WnzTwQ7MF1w06vL2PIpWfrEPZXeJ2NsbPmJCeR9Syc3nxygrZ53/0/cZyfNifWn15p94p5MiwAJgCJZDFi3CS3T/EYk708vN2Cj2yBzq3x3uzlIeQeiT9xT6ZR8n7wS5cepCm/+fppeyLyhUCimVkyg+K73sr9P3FNpqppTcUfWvjRFmD2H2788QmcdSUaDeEtBbHvw7u8DNLSz9nZKXIFXZX79k1P09gFNp2Q2yUIna81WcU+lTXp7zZ6lPBHmiWIaolncI2kTHiwzD65KchIlf9/z8gAdNrcn7dJlSHs2svrV3wdoKl68pWalpelxe8GWhn3inkovmP/tBY9X9jHGZsqQrsFvPnme9vz9MVEzfBQ9/Af0iXsqzRiCjbImnCrsbn087v5+nob3LkvZkw363cmUH5x94h5Np/+N1CUMbeLi/PrfZ+gczUSKEoQe8aweufyHI/kb9IM/mHZgOrFFGv50JH+DLt9v8KlY0UShHtr01trsE/dUOgZ9YqInG8Y7lRe0T9xT6VXfxJhmiETr9BQ53ifuqfTDeu+iEiK9okdR4X3iHk0rLVfBJ6yivt/dnTt/coI2/wRAnYHQ/hpPlJeibj45QBf9/eJILn3p8/R/4QnXDyyrOp0AAAAASUVORK5CYII=" alt="QR Code Pix no valor de R$ 10,00">
+    <div class="pix-key"><span>Chave Pix</span><strong>14050871963</strong></div>
+    <button class="btn primary" id="copyPaymentPix" type="button">Copiar chave Pix</button>
+    <p id="paymentStatus" style="font-size:.82rem;margin-top:12px"></p>
+    <small style="color:var(--muted)">Valor fixo: R$ 10,00</small>
+  </div>
+</div>
+
+<script>
+(function(){
+ const modal=document.getElementById('paymentModal');
+ const close=document.getElementById('closePayment');
+ document.querySelectorAll('.pay-trigger').forEach(function(btn){
+   btn.addEventListener('click',function(){
+     modal.classList.add('open'); modal.setAttribute('aria-hidden','false'); document.body.style.overflow='hidden';
+   });
+ });
+ function closeModal(){modal.classList.remove('open');modal.setAttribute('aria-hidden','true');document.body.style.overflow='';}
+ close.addEventListener('click',closeModal);
+ modal.addEventListener('click',function(e){if(e.target===modal)closeModal();});
+ document.getElementById('copyPaymentPix').addEventListener('click',async function(){
+   try{await navigator.clipboard.writeText('14050871963');document.getElementById('paymentStatus').textContent='Chave Pix copiada!';}
+   catch(e){document.getElementById('paymentStatus').textContent='Chave Pix: 14050871963';}
+ });
+})();
+</script>
+</body>
+</html>
